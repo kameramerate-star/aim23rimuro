@@ -2384,14 +2384,7 @@ TrackingHandler:InitializePlayers()
 
 --! Player Events Handler
 
-local OnTeleport; OnTeleport = Player.OnTeleport:Connect(function()
-    if DEBUG or not Fluent or not getfenv().queue_on_teleport then
-        OnTeleport:Disconnect()
-    else
-        getfenv().queue_on_teleport("getfenv().loadstring(game:HttpGet(\"https://raw.githubusercontent.com/ttwizz/Open-Aimbot/master/source.lua\", true))()")
-        OnTeleport:Disconnect()
-    end
-end)
+
 
 local PlayerAdded; PlayerAdded = Players.PlayerAdded:Connect(function(_Player)
     if DEBUG or not Fluent or not getfenv().Drawing or not getfenv().Drawing.new then
